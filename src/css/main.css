@@ -1,0 +1,616 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Gilroy;
+  src: url(../fonts/Gilroy-Light.otf);
+}
+@font-face {
+  font-family: Gilroy-bold;
+  src: url(../fonts/Gilroy-ExtraBold.otf);
+}
+#root {
+  width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.loaad {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+}
+
+body {
+  font-family: Gilroy;
+  padding: 16px;
+  color: #3498db;
+  background-color: #1e1e1e;
+}
+
+@media only screen and (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+}
+.button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 16px;
+}
+
+/* Основные стили */
+header {
+  margin-bottom: 135px;
+  padding-top: 40px;
+  min-height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header a {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 100% */
+  padding-bottom: 1px;
+}
+
+header a:hover {
+  transition: all 0.3s ease-in-out;
+  color: #8b39b2;
+}
+
+header .active {
+  color: #e2f063;
+  font-family: Gilroy;
+  text-decoration-line: underline;
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+header nav a {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Стили для бургер-меню */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+}
+
+.burger div {
+  width: 43px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.burger.open .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.burger.open .line2 {
+  opacity: 0;
+}
+
+.burger.open .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/* Медиазапросы для экранов шириной 360px */
+@media only screen and (max-width: 360px) {
+  header {
+    align-items: flex-start;
+    padding-top: 20px;
+    margin-bottom: 70px;
+  }
+  header h1 {
+    margin-bottom: 20px;
+  }
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    top: 85px;
+    right: -10px;
+    height: 900px;
+    background-color: #1e1e1e;
+    width: 360px;
+    padding: 20px;
+    padding-top: 200px;
+    text-align: center;
+  }
+  header nav a {
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  header nav.open {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+    margin-top: 6px;
+    margin-right: 10px;
+  }
+}
+.main_page h1 {
+  color: #e2f063;
+  font-family: Gilroy;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 100% */
+  margin-bottom: 60px;
+}
+.main_page .main__shadow {
+  opacity: 0.6;
+  background: linear-gradient(90deg, #8b39b2 0%, #e2f063 100%);
+  filter: blur(100px);
+  position: absolute;
+  width: 1173px;
+  height: 240px;
+  flex-shrink: 0;
+}
+.main_page p {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 50.4px */
+}
+
+@media only screen and (max-width: 360px) {
+  .main_page .main__shadow {
+    width: 340px;
+  }
+  .main_page h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 48px */
+  }
+  .main_page p {
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+  }
+}
+.starships .top-bar {
+  margin-bottom: 70px;
+}
+.starships .top-bar h1 {
+  color: #e2f063;
+  font-family: Gilroy;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 100% */
+}
+.starships .top-bar label {
+  color: #fff;
+  font-family: Gilroy;
+  margin-right: 15px;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.starships .top-bar select {
+  border-radius: 6px;
+  background: #fff;
+  color: black;
+}
+.starships .Cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 95px;
+  align-items: center;
+}
+.starships .Cards .card:hover {
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+.starships .Cards .card {
+  cursor: pointer;
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px;
+}
+.starships .Cards .card img {
+  width: 328px;
+  height: 210px;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+.starships .Cards .card .cost {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: #1e1e1e;
+  font-family: Gilroy;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 33.6px */
+}
+.starships .Cards .card .cost-value {
+  color: #1e1e1e;
+  text-align: right;
+  font-family: Gilroy-bold;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 39.2px */
+}
+.starships .Cards .card .name {
+  display: flex;
+  justify-content: space-between;
+}
+.starships .Cards .card .name .name-title {
+  color: #1e1e1e;
+  font-family: Gilroy;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 33.6px */
+}
+.starships .Cards .card .name .name-value {
+  color: #1e1e1e;
+  text-align: right;
+  font-family: Gilroy-bold;
+  font-size: 20px;
+  padding-top: 5px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 39.2px */
+}
+
+@media only screen and (max-width: 360px) {
+  .starships .top-bar {
+    margin-bottom: 70px;
+  }
+  .starships .top-bar h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 48px */
+  }
+  .starships .top-bar label {
+    color: #fff;
+    font-family: Gilroy;
+    margin-right: 15px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .starships .top-bar select {
+    border-radius: 6px;
+    background: #fff;
+    color: black;
+  }
+  .starships .Cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+  .starships .Cards .card:hover {
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+  }
+  .starships .Cards .card {
+    cursor: pointer;
+    border-radius: 10px;
+    background: #fff;
+    padding: 20px;
+  }
+  .starships .Cards .card img {
+    width: 298px;
+    height: 210px;
+    flex-shrink: 0;
+    border-radius: 10px;
+  }
+  .starships .Cards .card .cost {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #1e1e1e;
+    font-family: Gilroy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+  }
+  .starships .Cards .card .cost-value {
+    color: #1e1e1e;
+    text-align: right;
+    font-family: Gilroy-bold;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 39.2px */
+  }
+  .starships .Cards .card .name {
+    display: flex;
+    justify-content: space-between;
+  }
+  .starships .Cards .card .name .name-title {
+    color: #1e1e1e;
+    font-family: Gilroy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+  }
+  .starships .Cards .card .name .name-value {
+    color: #1e1e1e;
+    text-align: right;
+    font-family: Gilroy-bold;
+    font-size: 20px;
+    padding-top: 5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 39.2px */
+  }
+}
+.MoreInfo h1 {
+  color: #e2f063;
+  font-family: Gilroy;
+  margin-bottom: 60px;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 100% */
+}
+.MoreInfo p {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 50.4px */
+}
+.MoreInfo .MoreInfo_content {
+  margin-bottom: 60px;
+  display: flex;
+}
+.MoreInfo .MoreInfo_content img {
+  border-radius: 10px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  width: 624px;
+  height: 419px;
+  flex-shrink: 0;
+}
+.MoreInfo .MoreInfo_content ul {
+  padding: 40px;
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  list-style: none;
+  width: 100%;
+}
+.MoreInfo .MoreInfo_content ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.MoreInfo .MoreInfo_content ul li .left {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+}
+.MoreInfo .MoreInfo_content ul li .right {
+  color: #fff;
+  text-align: right;
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 360px) {
+  .MoreInfo h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 48px */
+    margin-bottom: 20px;
+  }
+  .MoreInfo p {
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+  }
+  .MoreInfo .MoreInfo_content {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .MoreInfo .MoreInfo_content img {
+    border-radius: 10px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+    width: 340px;
+    height: 228px;
+    flex-shrink: 0;
+  }
+  .MoreInfo .MoreInfo_content ul {
+    padding: 0px;
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 28px;
+    font-style: normal;
+    margin-top: 20px;
+    font-weight: 400;
+    list-style: none;
+    width: 100%;
+  }
+  .MoreInfo .MoreInfo_content ul li {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .MoreInfo .MoreInfo_content ul li .left {
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+  }
+  .MoreInfo .MoreInfo_content ul li .right {
+    color: #fff;
+    text-align: left;
+    font-family: Gilroy;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 42px */
+  }
+}
+.pageForm h1 {
+  color: #e2f063;
+  font-family: Gilroy;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 100% */
+  margin-bottom: 30px;
+}
+.pageForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pageForm .input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; /* Отступ между полем ввода и кнопкой */
+}
+.pageForm label {
+  display: block;
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 70px;
+}
+.pageForm input {
+  color: #1e1e1e;
+  width: 449px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #fff;
+}
+.pageForm button {
+  display: flex;
+  padding: 4px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background: #fff;
+  color: black;
+  transition: all 0.3 ease-in-out;
+  font-family: Gilroy;
+}
+.pageForm button:hover {
+  color: #8b39b2;
+  outline: 1px solid #8b39b2;
+  -webkit-box-shadow: 1px -10px 27px -12px rgb(139, 57, 178);
+  -moz-box-shadow: 1px -10px 27px -12px rgb(139, 57, 178);
+  box-shadow: 1px -10px 27px -12px rgb(139, 57, 178);
+}
+.pageForm .disabled {
+  opacity: 0.3;
+  cursor: no-drop;
+}
+
+@media only screen and (max-width: 360px) {
+  .pageForm h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 48px */
+    margin-bottom: 19px;
+  }
+  .pageForm input {
+    width: 340px;
+    height: 35px;
+  }
+  .pageForm label {
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .pageForm button {
+    display: flex;
+    padding: 4px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: #fff;
+    color: black;
+    transition: all 0.3 ease-in-out;
+    font-family: Gilroy;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

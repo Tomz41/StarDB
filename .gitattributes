@@ -1,0 +1,12 @@
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+# Explicitly set LF endings for specific file types
+*.js text eol=lf
+*.jsx text eol=lf
+*.cjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.scss text eol=lf
+*.md text eol=lf

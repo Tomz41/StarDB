@@ -1,0 +1,625 @@
+@import './scss/variables';
+@import './scss/base';
+
+.button {
+  background-color: $primary-color;
+  color: #fff;
+  padding: $padding;
+}
+
+/* Основные стили */
+header {
+  margin-bottom: 135px;
+  padding-top: 40px;
+  min-height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header a {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 100% */
+  padding-bottom: 1px;
+}
+
+header a:hover {
+  transition: all 0.3s ease-in-out;
+  color: #8b39b2;
+}
+
+header .active {
+  color: #e2f063;
+  font-family: Gilroy;
+  text-decoration-line: underline;
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+header nav a {
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Стили для бургер-меню */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+}
+
+.burger div {
+  width: 43px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.burger.open .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.burger.open .line2 {
+  opacity: 0;
+}
+
+.burger.open .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/* Медиазапросы для экранов шириной 360px */
+@media only screen and (max-width: 360px) {
+  header {
+    align-items: flex-start;
+    padding-top: 20px;
+    margin-bottom: 70px;
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    top: 85px;
+    right: -10px;
+    height: 900px;
+    background-color: #1e1e1e;
+    width: 360px;
+    padding: 20px;
+    padding-top: 200px;
+    text-align: center;
+    a {
+      color: #fff;
+      font-family: Gilroy;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  header nav.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+    margin-top: 6px;
+    margin-right: 10px;
+  }
+}
+
+// Главная страница
+.main_page {
+  h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70px; /* 100% */
+    margin-bottom: 60px;
+  }
+
+  .main__shadow {
+    opacity: 0.6;
+    background: linear-gradient(90deg, #8b39b2 0%, #e2f063 100%);
+    filter: blur(100px);
+    position: absolute;
+    width: 1173px;
+    height: 240px;
+    flex-shrink: 0;
+  }
+
+  p {
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 50.4px */
+  }
+}
+@media only screen and (max-width: 360px) {
+  .main_page {
+    .main__shadow {
+      width: 340px;
+    }
+    h1 {
+      color: #e2f063;
+      font-family: Gilroy;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 48px */
+    }
+    p {
+      color: #fff;
+      font-family: Gilroy;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 28px */
+    }
+  }
+}
+
+// Страница каталога кораблей
+.starships {
+  .top-bar {
+    margin-bottom: 70px;
+    h1 {
+      color: #e2f063;
+      font-family: Gilroy;
+      font-size: 70px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 70px; /* 100% */
+    }
+    label {
+      color: #fff;
+      font-family: Gilroy;
+      margin-right: 15px;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    select {
+      border-radius: 6px;
+      background: #fff;
+      color: black;
+    }
+  }
+
+  // Контейнер карточек корабля
+  .Cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 95px;
+    align-items: center;
+    // justify-content: space-between;
+
+    // карточка корабля
+    .card:hover {
+      opacity: 0.7;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card {
+      cursor: pointer;
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px;
+      img {
+        width: 328px;
+        height: 210px;
+        flex-shrink: 0;
+        border-radius: 10px;
+      }
+      .cost {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        color: #1e1e1e;
+        font-family: Gilroy;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 33.6px */
+      }
+
+      .cost-value {
+        color: #1e1e1e;
+        text-align: right;
+        font-family: Gilroy-bold;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%; /* 39.2px */
+      }
+      .name {
+        display: flex;
+        justify-content: space-between;
+        .name-title {
+          color: #1e1e1e;
+          font-family: Gilroy;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 33.6px */
+        }
+        .name-value {
+          color: #1e1e1e;
+          text-align: right;
+          font-family: Gilroy-bold;
+          font-size: 20px;
+          padding-top: 5px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 140%; /* 39.2px */
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 360px) {
+  .starships {
+    .top-bar {
+      margin-bottom: 70px;
+      h1 {
+        color: #e2f063;
+        font-family: Gilroy;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 48px */
+      }
+      label {
+        color: #fff;
+        font-family: Gilroy;
+        margin-right: 15px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      select {
+        border-radius: 6px;
+        background: #fff;
+        color: black;
+      }
+    }
+
+    // Контейнер карточек корабля
+    .Cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      // justify-content: space-between;
+
+      // карточка корабля
+      .card:hover {
+        opacity: 0.7;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card {
+        cursor: pointer;
+        border-radius: 10px;
+        background: #fff;
+        padding: 20px;
+        img {
+          width: 298px;
+          height: 210px;
+          flex-shrink: 0;
+          border-radius: 10px;
+        }
+        .cost {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+          color: #1e1e1e;
+          font-family: Gilroy;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 33.6px */
+        }
+
+        .cost-value {
+          color: #1e1e1e;
+          text-align: right;
+          font-family: Gilroy-bold;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 140%; /* 39.2px */
+        }
+        .name {
+          display: flex;
+          justify-content: space-between;
+          .name-title {
+            color: #1e1e1e;
+            font-family: Gilroy;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 33.6px */
+          }
+          .name-value {
+            color: #1e1e1e;
+            text-align: right;
+            font-family: Gilroy-bold;
+            font-size: 20px;
+            padding-top: 5px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%; /* 39.2px */
+          }
+        }
+      }
+    }
+  }
+}
+
+// Подробнее о корабле
+.MoreInfo {
+  h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    margin-bottom: 60px;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70px; /* 100% */
+  }
+  p {
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 50.4px */
+  }
+  .MoreInfo_content {
+    margin-bottom: 60px;
+    display: flex;
+    img {
+      border-radius: 10px;
+      background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+      width: 624px;
+      height: 419px;
+      flex-shrink: 0;
+    }
+
+    ul {
+      padding: 40px;
+      color: #fff;
+      font-family: Gilroy;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 400;
+      list-style: none;
+      width: 100%;
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .left {
+          color: #fff;
+          font-family: Gilroy;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 180%;
+        }
+        .right {
+          color: #fff;
+          text-align: right;
+          font-family: Gilroy-Bold;
+          font-size: 34px;
+          font-style: normal;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 360px) {
+  .MoreInfo {
+    h1 {
+      color: #e2f063;
+      font-family: Gilroy;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 48px */
+      margin-bottom: 20px;
+    }
+    p {
+      color: #fff;
+      font-family: Gilroy;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 28px */
+    }
+    .MoreInfo_content {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      img {
+        border-radius: 10px;
+        background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+        width: 340px;
+        height: 228px;
+        flex-shrink: 0;
+      }
+
+      ul {
+        padding: 0px;
+        color: #fff;
+        font-family: Gilroy;
+        font-size: 28px;
+        font-style: normal;
+        margin-top: 20px;
+        font-weight: 400;
+        list-style: none;
+        width: 100%;
+        li {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          margin-bottom: 20px;
+          .left {
+            color: #fff;
+            font-family: Gilroy;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 33.6px */
+          }
+          .right {
+            color: #fff;
+            text-align: left;
+            font-family: Gilroy;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%; /* 42px */
+          }
+        }
+      }
+    }
+  }
+}
+.pageForm {
+  h1 {
+    color: #e2f063;
+    font-family: Gilroy;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70px; /* 100% */
+    margin-bottom: 30px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Отступ между полем ввода и кнопкой */
+  }
+  label {
+    display: block;
+    color: #fff;
+    font-family: Gilroy;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 70px;
+  }
+  input {
+    color: #1e1e1e;
+    width: 449px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #fff;
+  }
+  button {
+    display: flex;
+    padding: 4px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: #fff;
+    color: black;
+    transition: all 0.3 ease-in-out;
+    font-family: Gilroy;
+  }
+
+  button:hover {
+    color: #8b39b2;
+    outline: 1px solid #8b39b2;
+    -webkit-box-shadow: 1px -10px 27px -12px rgba(139, 57, 178, 1);
+    -moz-box-shadow: 1px -10px 27px -12px rgba(139, 57, 178, 1);
+    box-shadow: 1px -10px 27px -12px rgba(139, 57, 178, 1);
+  }
+  .disabled {
+    opacity: 0.3;
+    cursor: no-drop;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .pageForm {
+    h1 {
+      color: #e2f063;
+      font-family: Gilroy;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 48px */
+      margin-bottom: 19px;
+    }
+    input {
+      width: 340px;
+      height: 35px;
+    }
+    label {
+      margin-bottom: 10px;
+      color: #fff;
+      font-family: Gilroy;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    button {
+      display: flex;
+      padding: 4px 23px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 6px;
+      background: #fff;
+      color: black;
+      transition: all 0.3 ease-in-out;
+      font-family: Gilroy;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
