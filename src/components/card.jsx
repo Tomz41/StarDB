@@ -5,7 +5,7 @@ export default function Card({ starship, onChange, ...props }) {
   const [block, setblock] = useState(false);
 
   function handleImageError(event) {
-    event.target.src = '/public/darth-vader-svgrepo-com.svg';
+    event.target.src = '/darth-vader-svgrepo-com.svg';
     setblock(true);
   }
 
